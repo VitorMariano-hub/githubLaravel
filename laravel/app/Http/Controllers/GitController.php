@@ -19,6 +19,11 @@ class GitController extends Controller
     {
         $user = $this->githubApiService->getUserData('VitorMariano-hub');
 
+        if (isset($user['error'])) {
+            $error = $user['error'];
+            return view('home', ['error' => $error]);
+        }
+
         return view('home', ['user' => $user]);
 
     }
@@ -28,6 +33,11 @@ class GitController extends Controller
         $search = $request->input('search');
 
         $user = $this->githubApiService->getUserData($search);
+
+        if (isset($user['error'])) {
+            $error = $user['error'];
+            return view('home', ['error' => $error]);
+        }
 
         return view('home', ['user' => $user]);
 

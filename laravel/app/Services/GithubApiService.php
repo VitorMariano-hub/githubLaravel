@@ -16,18 +16,20 @@ class GitHubApiService
                     'header' => array(
                         'User-Agent: GitHub'
                     ),
-                    'ignore_errors' => true
                 )
             );
 
             $context = stream_context_create($options);
             $response = file_get_contents($url, false, $context);
 
-            return json_decode($response, true);
+            if (!empty($response)) {
+                return json_decode($response, true);
+            }
+
         } catch (\Exception $e) {
             Log::error('Erro na API do GitHub: ' . $e->getMessage());
 
-            return ['error' => 'Ocorreu um erro ao acessar a API do GitHub.'];
+            return ['error' => 'Usuário não encontrado.'];
         }
     }
 }

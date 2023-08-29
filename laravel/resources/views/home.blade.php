@@ -26,6 +26,12 @@
     </div>
     <div class="container mt-5">
       <div class="row">
+      @if(isset($error))
+        <div class="alert alert-danger">
+            {{ $error }}
+        </div>
+     @endif
+     @if(isset($user))
         <div class="card" style="width: 18rem;">
           <img src="{{$user['avatar_url']}}" class="card-img-top" alt="Avatar">
           <div class="card-body">
@@ -44,5 +50,6 @@
       </div>
     </div>
     </div>
+    @endif
   </body>
 </html>
