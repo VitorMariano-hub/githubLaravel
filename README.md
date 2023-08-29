@@ -12,7 +12,11 @@ Ambos os métodos retornam o valor da consulta para a view home.
 
 A classe responsavel por realizar a consulta na api via curl está em Services/GitHubApiService essa classe está separada do Controller e possui o método para buscar usuarios 'getUserData'  
 
-* getUserData: está envolvido em um try-catch para manipulação de exceções, chamando a api do github através de curl e retornando a resposta via json.
+* getUserData: está envolvido em um try-catch para manipulação de exceções, chamando a api do github através de curl e retornando a resposta via json.  
+
+![bears](https://i.postimg.cc/g0mcm8MY/Capturar.png)  
+
+![bears](https://i.postimg.cc/ZRjxV8Q0/Captur.png)
 
 
 
