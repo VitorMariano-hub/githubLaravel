@@ -44,7 +44,6 @@
           </ul>
           <div class="card-body">
             <a href="{{$user['html_url']}}" class="card-link" target="_blank">Github</a>
-            <a href="{{$user['repos_url']}}" class="card-link" target="_blank">Repositorios</a>
           </div>
         </div>
       </div>
